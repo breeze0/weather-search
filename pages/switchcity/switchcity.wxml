@@ -15,10 +15,10 @@
         <view class="hotcity-common thisCity">选择城市</view>
         <view class='input-search'>
             <view class="thisCityName">
-                <input type='text' placeholder='请输入或选择城市' confirm-type='go' value='{{ city }}' />
+                <input type='text' placeholder='请输入或选择城市' confirm-type='go' value='{{ selectCity }}' />
             </view>
             <view class='btn-wrapper'>
-                <button class='search-btn' type='default' >查询</button>
+                <button class='search-btn' type='default' bindtap='bindSearch'>查询</button>
             </view>
         </view>
     </view>

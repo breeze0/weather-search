@@ -11,7 +11,7 @@ Page({
     isShowLetter: false,
     scrollTop: 0,//置顶高度
     scrollTopId: '',//置顶id
-    city: "",
+	selectCity: "",
     hotcityList: [{ cityCode: 110000, city: '北京市' }, { cityCode: 310000, city: '上海市' }, { cityCode: 440100, city: '广州市' }, { cityCode: 440300, city: '深圳市' }, { cityCode: 330100, city: '杭州市' }, { cityCode: 320100, city: '南京市' }, { cityCode: 420100, city: '武汉市' }, { cityCode: 410100, city: '郑州市' }, { cityCode: 120000, city: '天津市' }, { cityCode: 610100, city: '西安市' }, { cityCode: 510100, city: '成都市' }, { cityCode: 500000, city: '重庆市' }]
   },
   onLoad: function () {
@@ -62,7 +62,6 @@ Page({
 
   },
   clickLetter: function (e) {
-    console.log(e.currentTarget.dataset.letter)
     var showLetter = e.currentTarget.dataset.letter;
     this.setData({
       showLetter: showLetter,
@@ -78,14 +77,12 @@ Page({
   },
   //选择城市
   bindCity: function (e) {
-    console.log("bindCity")
-    this.setData({ city: e.currentTarget.dataset.city })
+	  this.setData({ selectCity: e.currentTarget.dataset.city })
   },
   //选择热门城市
   bindHotCity: function (e) {
-    console.log("bindHotCity")
-    this.setData({
-      city: e.currentTarget.dataset.city
+	this.setData({
+      selectCity: e.currentTarget.dataset.city
     })
   },
   //点击热门城市回到顶部
@@ -93,5 +90,11 @@ Page({
     this.setData({
       scrollTop: 0,
     })
+  },
+  bindSearch: function() {
+	  var _this = this;
+	  wx.navigateTo({
+		  url: "../weather/weather?city="+ _this.data.selectCity
+	  })
   }
 })

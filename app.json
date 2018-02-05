@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/switchcity/switchcity"
+    "pages/switchcity/switchcity",
+	"pages/weather/weather"
   ],
   "window": {
     "backgroundTextStyle": "light",

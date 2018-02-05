@@ -1,0 +1,10 @@
+.container {
+	padding: 0 3%;
+}
+.forecast-content {
+	margin-top: 30rpx;
+}
+.forecast-content .content-item {
+	margin-top: 20rpx;
+	border-top:1px solid #f1f1f1; 
+}

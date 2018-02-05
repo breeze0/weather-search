@@ -1,0 +1,21 @@
+<view class='container'>
+	<view>今日天气</view>
+	<view>城市： {{ city }}</view>
+	<view>温度： {{ wendu }}℃</view>
+	<view>湿度： {{ shidu }}</view>
+	<view>空气质量： {{ quality }}</view>
+	<view>感冒提醒： {{ ganmao }}</view>
+	<view class='forecast-content'>
+		<view>未来五日天气预测</view>
+		<view wx:for="{{ forecast }}" class='content-item'>
+			<view>{{ item.date }}</view>
+			<view>天气： {{ item.type}}</view>
+			<view>风向： {{ item.fx }}</view>
+			<view>风级： {{ item.fl }}</view>
+			<view>{{ item.high }}</view>
+			<view>{{ item.low }}</view>
+			<view>温馨提示： {{ item.notice }}</view>
+			<view></view>
+		</view>
+	</view>
+</view>
